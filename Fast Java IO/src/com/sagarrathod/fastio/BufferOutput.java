@@ -86,7 +86,7 @@ public class BufferOutput {
 	 * 
 	 * @throws IOException
 	 */
-	private void flush() throws IOException {
+	public void flush() throws IOException {
 		dout.write(buffer, 0, pointer);
 		dout.flush();
 		pointer = 0;
