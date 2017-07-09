@@ -1,5 +1,5 @@
 ### Fast-Java-Input-Output
-An ultra fast way for reading/writing data from I/O stream.
+An ultra fast way of reading/writing data from/to Input/Output stream.
 
 Most Java programmers need a fast way to read the data from input stream as well as to write the data to output stream in order to compete in programming challenges on Hackerrank and Hackerearth.
   
@@ -18,7 +18,7 @@ Most Java programmers need a fast way to read the data from input stream as well
      ![Image](/../master/Fast%20Java%20IO/resources/Buffer%20Input%20and%20Outputpng.png?raw=true)
 
 
-### Code Sample
+### Sample Code
 
 ```
 import java.io.IOException;
