@@ -3,6 +3,7 @@ package com.sagarrathod.fastio;
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * BufferInput lets you buffer the input contents from input stream.
@@ -23,7 +24,7 @@ public class BufferInput {
 	private byte[] buffer;
 	
 	private int bufferPointer, bytesRead;
-
+	
 	public BufferInput() {
 		din = new DataInputStream(System.in);
 		buffer = new byte[BUFFER_SIZE];
@@ -52,6 +53,30 @@ public class BufferInput {
 		return new String(buf, 0, cnt);
 	}
 	
+	/**
+	 * 
+	 * @return
+	 * @throws IOException
+	 */
+	public String nextString() throws IOException{
+		
+		// Skip all whitespace characters from the stream
+		byte c = read();
+		while(Character.isWhitespace(c)){
+			c = read();
+		}
+		
+		StringBuilder builder = new StringBuilder();
+		builder.append((char)c);
+		c = read();
+		while(!Character.isWhitespace(c)){
+			builder.append((char)c);
+			c = read();
+		}
+		
+		return builder.toString();
+	}
+		
 	/**
 	 * Reads an integer value.
 	 * @return
@@ -94,6 +119,20 @@ public class BufferInput {
 			return -ret;
 		return ret;
 	}
+	
+	/**
+	 * 
+	 * @return
+	 * @throws IOException
+	 */
+	public char nextChar() throws IOException{
+		byte c = read();
+		while(Character.isWhitespace(c)){
+			c = read();
+		}
+		return (char) c;	
+	}
+	
 
 	/**
 	 * Reads a double value.
